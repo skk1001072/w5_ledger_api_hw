@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException
+from fastapi.responses import RedirectResponse
 from sqlalchemy import select, func
 from sqlalchemy.orm import Session
 from database import engine, Base, get_db
@@ -6,6 +7,10 @@ import models, schemas
 
 Base.metadata.create_all(bind=engine)   # 모델대로 테이블 생성(없는 테이블만). 실무 변경은 5장 Alembic
 app = FastAPI(title="가계부 API")
+
+@app.get("/", include_in_schema=False)
+def root():
+    return RedirectResponse(url="/docs")
 
 # ── 계좌 ─────────────────────────────────────
 @app.post("/accounts", response_model=schemas.AccountRead, status_code=201)
