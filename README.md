@@ -1,6 +1,6 @@
 # 가계부 API (FastAPI + Supabase)
 
-- GitHub: (push 후 이 저장소 주소로 채우기)
+- GitHub: https://github.com/skk1001072/w5_ledger_api_hw
 - Render: (배포 후 https://....onrender.com 주소로 채우기)
 
 FastAPI + SQLAlchemy로 계좌(Account)·카테고리(Category)·거래(Transaction)를 관리하는 가계부 API입니다.
