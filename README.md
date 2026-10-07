@@ -1,7 +1,7 @@
 # 가계부 API (FastAPI + Supabase)
 
 - GitHub: https://github.com/skk1001072/w5_ledger_api_hw
-- Render: (배포 후 https://....onrender.com 주소로 채우기)
+- Render: https://w5-ledger-api-hw.onrender.com
 
 FastAPI + SQLAlchemy로 계좌(Account)·카테고리(Category)·거래(Transaction)를 관리하는 가계부 API입니다.
 DB는 Supabase(PostgreSQL)를 사용하며, Render에 배포되어 인터넷에서 접근할 수 있습니다.
@@ -32,7 +32,7 @@ uvicorn main:app --reload
 - Supabase Table Editor에서 `accounts`·`categories`·`transactions` 테이블과 샘플 데이터(계좌 2개, 카테고리 3개, 거래 3건)를 확인함.
 - `GET /accounts/1/detail` 호출 시 계좌 정보에 거래 목록이 중첩되어 반환됨을 확인함.
 - `GET /stats/by-category` 호출 시 카테고리별 지출 합계(`식비 -12000`, `교통 -1500`)가 정상 집계됨을 확인함.
-- (Render 배포 완료 후) `https://<서비스>.onrender.com/docs`의 `GET /accounts`가 로컬에서 만든 것과 같은 데이터를 반환함을 확인함.
+- `https://w5-ledger-api-hw.onrender.com/docs`의 `GET /accounts`가 로컬에서 만든 것과 같은 데이터(주거래통장·비상금통장)를 반환함을 확인함 — Render의 API가 Supabase와 연동됨을 확인.
 
 ## ② 핵심 개념 되새김
 
